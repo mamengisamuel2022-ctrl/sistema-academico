@@ -3,11 +3,11 @@ const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
 const fs = require('fs');
+const mongoose = require('mongoose'); // ✅ Movido para cá
 require('dotenv').config();
 
 const connectDB = require('./config/database');
 
-// Conectar ao banco de dados
 connectDB();
 
 const app = express();
@@ -18,22 +18,34 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
-// Middlewares básicos
-app.use(cors());
+// CORS - Permitir tudo temporariamente para debug
+app.use(cors({
+  origin: '*',
+  credentials: true
+}));
+
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Servir arquivos estáticos
 app.use('/uploads', express.static(path.join(__dirname, '..', uploadDir)));
 
-// Rotas da API
+// Rotas
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/reclamacoes', require('./routes/reclamacoes'));
 
-// Rota de health check
+// Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'online', timestamp: new Date() });
+  res.json({ 
+    status: 'online', 
+    timestamp: new Date(),
+    mongodb: mongoose.connection.readyState === 1 ? 'conectado' : 'desconectado'
+  });
+});
+
+// Rota raiz
+app.get('/', (req, res) => {
+  res.json({ message: 'API do Sistema Acadêmico' });
 });
 
 // Tratamento de erros
