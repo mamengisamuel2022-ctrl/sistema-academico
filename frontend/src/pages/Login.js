@@ -52,7 +52,7 @@ const Login = () => {
           Login
         </Typography>
         <Typography variant="body2" align="center" color="text.secondary" sx={{ mb: 3 }}>
-          Sistema Acadêmico - Reclamações e Sugestões
+          SISA - Reclamações e Sugestões
         </Typography>
 
         {error && (

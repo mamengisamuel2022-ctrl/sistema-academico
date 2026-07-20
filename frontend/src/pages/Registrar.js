@@ -91,7 +91,7 @@ const Registrar = () => {
           Criar Conta
         </Typography>
         <Typography variant="body2" align="center" color="text.secondary" sx={{ mb: 3 }}>
-          Registre-se no Sistema Acadêmico
+          Registre-se no SISA IMETRO - Modulo Reclamações
         </Typography>
 
         {error && (
