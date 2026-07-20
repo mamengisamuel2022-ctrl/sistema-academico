@@ -109,6 +109,9 @@ const Login = () => {
           <Typography variant="h6" gutterBottom>
             Credenciais de Acesso
           </Typography>
+            <Typography variant="h6" gutterBottom>
+                OBS: Essa tabela só está aqui a titulo de disponibilizar os testes || O Professor pode criar outros usuários mais serão do Tipo Estudante 
+            </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
             Clique em uma linha para preencher automaticamente
           </Typography>
