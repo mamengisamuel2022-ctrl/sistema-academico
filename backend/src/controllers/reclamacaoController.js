@@ -316,7 +316,6 @@ exports.dashboard = async (req, res) => {
       recentes,
       ticketsAbertos,
       ticketsFechados,
-      slaViolados,
       tempoMedioResolucao
     ] = await Promise.all([
       // Totais
@@ -390,7 +389,6 @@ exports.dashboard = async (req, res) => {
       // Tickets
       Reclamacao.countDocuments({ 'ticket.status': { $in: ['aberto', 'atribuido', 'em_atendimento'] } }),
       Reclamacao.countDocuments({ 'ticket.status': 'fechado' }),
-      Reclamacao.countDocuments({ 'ticket.sla.violado': true }),
       
       // Tempo médio de resolução
       Reclamacao.aggregate([
@@ -412,7 +410,6 @@ exports.dashboard = async (req, res) => {
           resolvidos,
           ticketsAbertos,
           ticketsFechados,
-          slaViolados,
           tempoMedioResolucao: tempoMedioResolucao[0]?.media?.toFixed(2) || 0
         },
         porStatus,
