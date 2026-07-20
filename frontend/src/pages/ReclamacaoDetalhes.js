@@ -173,7 +173,7 @@ const ReclamacaoDetalhes = () => {
                 variant="outlined"
                 size="small"
                 startIcon={<Download />}
-                href={`http://localhost:5000${anexo.url}`}
+                href={`https://sistema-academico-w5ov.onrender.com${anexo.url}`}
                 target="_blank"
                 sx={{ mr: 1, mb: 1 }}
               >

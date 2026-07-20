@@ -149,7 +149,7 @@ const GerenciarTickets = () => {
 
       switch (acao) {
         case 'iniciar':
-          await fetch(`http://localhost:5000/api/reclamacoes/tickets/${ticketSelecionado._id}/iniciar`, {
+          await fetch(`https://sistema-academico-w5ov.onrender.com/api/reclamacoes/tickets/${ticketSelecionado._id}/iniciar`, {
             method: 'PATCH',
             headers
           });
@@ -162,7 +162,7 @@ const GerenciarTickets = () => {
             setProcessando(false);
             return;
           }
-          await fetch(`http://localhost:5000/api/reclamacoes/${ticketSelecionado._id}/responder`, {
+          await fetch(`https://sistema-academico-w5ov.onrender.com/api/reclamacoes/${ticketSelecionado._id}/responder`, {
             method: 'POST',
             headers,
             body: JSON.stringify({ mensagem })
@@ -176,7 +176,7 @@ const GerenciarTickets = () => {
             setProcessando(false);
             return;
           }
-          await fetch(`http://localhost:5000/api/reclamacoes/tickets/${ticketSelecionado._id}/encaminhar`, {
+          await fetch(`https://sistema-academico-w5ov.onrender.com/api/reclamacoes/tickets/${ticketSelecionado._id}/encaminhar`, {
             method: 'PATCH',
             headers,
             body: JSON.stringify({ servico, motivo: mensagem })
@@ -190,7 +190,7 @@ const GerenciarTickets = () => {
             setProcessando(false);
             return;
           }
-          await fetch(`http://localhost:5000/api/reclamacoes/tickets/${ticketSelecionado._id}/fechar`, {
+          await fetch(`https://sistema-academico-w5ov.onrender.com/api/reclamacoes/tickets/${ticketSelecionado._id}/fechar`, {
             method: 'PATCH',
             headers,
             body: JSON.stringify({ resolucao: mensagem })
