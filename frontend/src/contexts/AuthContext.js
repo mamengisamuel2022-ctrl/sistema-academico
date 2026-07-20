@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
 
   const carregarUsuario = async () => {
     try {
-      const { data } = await axios.get('https://sistema-academico-api.onrender.com/api/auth/perfil');
+      const { data } = await axios.get('https://sistema-academico-w5ov.onrender.com/api/auth/perfil');
       setUsuario(data.usuario);
     } catch (error) {
       console.error('Erro ao carregar usuário:', error);
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, senha) => {
     try {
-      const { data } = await axios.post('https://sistema-academico-api.onrender.com/api/auth/login', {
+      const { data } = await axios.post('https://sistema-academico-w5ov.onrender.com/api/auth/login', {
         email,
         senha
       });
@@ -84,7 +84,7 @@ export const AuthProvider = ({ children }) => {
 
   const registrar = async (dados) => {
     try {
-      const { data } = await axios.post('https://sistema-academico-api.onrender.com/api/auth/registrar', dados);
+      const { data } = await axios.post('https://sistema-academico-w5ov.onrender.com/api/auth/registrar', dados);
       
       localStorage.setItem('token', data.token);
       setToken(data.token);

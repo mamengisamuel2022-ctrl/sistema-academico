@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-// ✅ URL do backend no Render
-const API_URL = 'https://sistema-academico-api.onrender.com/api';
+// ✅ URL CORRETA do backend
+const API_URL = 'https://sistema-academico-w5ov.onrender.com/api';
 
 const api = axios.create({
-  baseURL: API_URL
+  baseURL: API_URL,
+  timeout: 30000
 });
 
 api.interceptors.request.use((config) => {
