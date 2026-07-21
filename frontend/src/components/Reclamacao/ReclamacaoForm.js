@@ -199,22 +199,7 @@ const ReclamacaoForm = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12}>
-            <Paper
-              {...getRootProps()}
-              sx={{
-                p: 3,
-                textAlign: 'center',
-                backgroundColor: '#f5f5f5',
-                cursor: 'pointer',
-                border: '2px dashed #ccc'
-              }}
-            >
-             
-            </Paper>
-            
-          </Grid>
-
+          
           <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
