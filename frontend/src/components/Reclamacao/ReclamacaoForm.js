@@ -210,14 +210,7 @@ const ReclamacaoForm = () => {
                 border: '2px dashed #ccc'
               }}
             >
-              <input {...getInputProps()} />
-              <CloudUpload sx={{ fontSize: 48, color: 'primary.main' }} />
-              <Typography>
-                Arraste arquivos aqui ou clique para selecionar
-              </Typography>
-              <Typography variant="caption" color="text.secondary">
-                Máximo 5 arquivos (5MB cada)
-              </Typography>
+             
             </Paper>
             {files.length > 0 && (
               <Box sx={{ mt: 2 }}>
