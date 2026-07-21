@@ -212,19 +212,7 @@ const ReclamacaoForm = () => {
             >
              
             </Paper>
-            {files.length > 0 && (
-              <Box sx={{ mt: 2 }}>
-                {files.map((file, index) => (
-                  <Chip
-                    key={index}
-                    label={file.name}
-                    onDelete={() => removeFile(index)}
-                    deleteIcon={<Close />}
-                    sx={{ m: 0.5 }}
-                  />
-                ))}
-              </Box>
-            )}
+            
           </Grid>
 
           <Grid item xs={12} sm={6}>
